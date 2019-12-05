@@ -1,0 +1,25 @@
+<html>
+<script>
+function promp(){
+    var a = prompt("please enter number")
+    //stringNumber = parseInt(stringNumber);
+    if(a >= 0)
+{
+    var s=document.getElementById('demo');
+    s.innerHTML="this is postive";
+     s.style.color="green";
+}
+else if(a<0)
+{
+    var p=document.getElementById('demo');
+    p.innerHTML="this is nagitive";
+     p.style.color="red";
+}
+else{
+    document.getElementById('demo').innerHTML="this is enter number"
+}
+}
+</script>
+<button onclick="promp()">sumbit</button>
+<h2 id="demo"></h2>
+</html>

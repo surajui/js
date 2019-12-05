@@ -1,0 +1,67 @@
+<html>
+    <head>
+   
+        <title>Form</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" 
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">        
+        <script>
+        function myFunction() {
+ 
+ 
+  x = document.getElementById("numb").value;
+ 
+  if(x=="")
+  {
+    var x1=document.getElementById("demo");
+  x1.innerHTML = "Enter the Email/Phone Number";
+  x1.style.backgroundColor="#F2DEDE"
+  }
+  else{
+      return false;
+  }
+ 
+ 
+}</script>
+    </head>
+    <body> <div class="text-center">
+                </div>
+  
+                <h1 class="text-center mt-3 "> Print Tickets</h1>
+        <div class="jumbotron container mt-5">
+               
+            <div class="row">
+                <div class="col-6">
+                        
+                    <form>
+                        <label>Ticket Number</label>
+                        <input id="numb" type="text" name="Name" class="form-control">
+                        <label class="mt-3">Email/Phone Number</label>
+                        <input id="numb" type="text" name="Age" class="form-control">
+                   
+ 
+                        <button type="button" class="btn btn-primary mt-3" onclick="myFunction()">Print Tickets  </button>
+                       
+                        <p class="mt-5 ml-3"> <i class="fa fa-warning" style="font-size:25px;color:red"></i>Enter your Ticket Number and the email address used while booking the ticket</p>
+                        <p class="mt-3"id="demo"></p>
+                    </form>
+                </div>
+                <div class="col-6">
+                    <img src="https://images.financialexpress.com/2019/07/Tata-Ultra-Electric-Bus-660.jpg" width="550px">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+ 
+<div class="col-6"><span >*</span>Please read the TERMS & CONDITIONS about the Cancellation Policy.</div>
+ 
+            </div>
+        </div>
+           
+            
+    </body>
+</html>
