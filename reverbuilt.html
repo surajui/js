@@ -1,0 +1,27 @@
+<html>
+<h2>Reverse text using JavaScript</h2>
+<script>
+function reverse()
+        {
+    var reversestr="";
+    var reversestr2="";
+    var a=document.getElementsByName("name")[0].value;
+    var splited=a.split(" ");
+    for(var i=0;i<=splited.length-1;i++)
+    {
+    var abc=splited[i];
+    for(var j=abc.length-1;j>=0;j--)
+    {
+       reversestr+=abc[j];
+    }  
+   reversestr2+=" "+reversestr;
+   reversestr="";
+}
+"<h1>Reverse of string</h1>"+document.write(reversestr2);
+}
+</script>
+<form>
+    <input type="text" name="name">
+    <input type="submit" value="reverse" onclick="reverse()">
+</form>
+</html>
