@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="register.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<head>
+        <meta charset="UTF-8">
+        <title>Simple HTML Form</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="validator.js"></script>
+    </head>
+<form name="contactForm" onsubmit="return validateForm()" action="confirmation.php" method="post">
+        <h2> Form</h2>
+        <div class="row">
+            <label>Full Name</label>
+            <input type="text" name="name"  onblur="myFunction()">
+            <div class="error" id="nameErr"></div>
+            <span id="demo"></span>
+        </div>
+        <div class="row">
+            <label>Email Address</label>
+            <input type="text" name="email" id="email"  onblur="myFunction1()">
+            <div class="error" id="emailErr"></div>
+        </div>
+        <div class="row">
+            <label>Age</label>
+            <input type="text" name="age" id="age"  onblur="myFunction2()">
+            <div class="error" id="ageErr"></div>
+        </div>
+        <div class="row">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+   <script>
+    function  myFunction(){
+      document.getElementById("nameErr").innerHTML="please fiil the name"
+    }
+    function myFunction1() {
+        document.getElementById("emailErr").innerHTML="please fiil the Email"
+     }
+    function myFunction2() {
+        document.getElementById("ageErr").innerHTML="please fiil the age"
+      }
+ function printError(elemId, hintMsg) {
+    document.getElementById(elemId).innerHTML = hintMsg;
+}
+function validateForm() {
+ 
+    var name = document.contactForm.name.value;
+    var email = document.contactForm.email.value;
+   var age=document.contactForm.age.value
+ var nameErr = emailErr=ageErr  = true;
+     if(name == "") {
+        printError("nameErr", "Please enter your name");
+    }  
+    else  if(name.length < 4 ){
+        printError("nameErr","Please enter the name with 4 letters maximum")
+    }
+    else {
+            printError("nameErr", "");
+            nameErr = false;
+        }
+    if(email == "") {
+        printError("emailErr", "Please enter your email address");
+    } else {
+    
+        var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        if(regex.test(email) === false) {
+            printError("emailErr", "Please enter a valid email address");
+        } else{
+            printError("emailErr", "");
+            emailErr = false;
+        }
+    }
+    if(age==""){
+        printError("ageErr","Please enter your age");
+    }
+    else {
+        if(isNaN(age)||age<10||age>25) {
+            printError("ageErr","Please enter the age between 10 and 25")
+        }
+        else {
+            printError("ageErr","");
+            ageErr=false;
+        }
+    }
+     if((nameErr || emailErr||ageErr ) == true) {
+       return false;
+    } else {
+       var dataPreview = "You've entered the following details: \n" +
+                          "Full Name: " + name + "\n" +
+                          "Email Address: " + email + "\n" +
+                           console.log(dataPreview);
+    }
+};
+</script>
+</body>
+</html>
