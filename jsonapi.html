@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>Get api from js</title>
+    <!-- <style>
+  p{
+      color: orange;
+  }
+    </style> -->
+</head>
+<body>
+        <table class="table table-bordered" id="gable">
+            <tr>
+                <th>Created_at</th>
+                <th>Title</th>
+                <th>Url</th>
+                <th>Author</th>
+            </tr>
+    </table>
+    
+
+    <script>
+    fetch('https://hn.algolia.com/api/v1/search_by_date?tags=story').then(data=>{
+        return data.json();
+    }).then(data2=>{   
+        data2["hits"].forEach(function(a){
+            var table = document.getElementById('gable');
+          var tr = document.createElement('tr');
+            tr.innerHTML = '<td>' + a.created_at + '</td>' +
+                           '<td>' + a.title  + '</td>'+
+                           '<td>' + a.url + '</td>' +
+                           '<td>' + a.author + '</td>'
+                           table.appendChild(tr);  
+        })
+         })
+    
+    </script>
+</body>
+</html>
