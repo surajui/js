@@ -1,0 +1,12 @@
+<script>
+
+var array2=[1,5,3,4,6,2];
+var sortarry=array2.sort(function(a, b){return a - b});
+var squarearray=[];
+for(var i=0;i < sortarry.length;i++){
+if(sortarry[i]%2===0){
+squarearray.push(sortarry[i]*sortarry[i]);
+}
+}
+console.log(squarearray.join(' '));
+</script>
