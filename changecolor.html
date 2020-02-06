@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .box1 {
+            border: 1px solid #ccc;
+            padding: 25px 30px;
+            text-align: center;
+        }
+        .mainArea {
+            float: left;
+        }
+        .testArea {
+            margin:
+                auto;
+            padding: 20px;
+        }
+        .formArea {
+            margin-bottom: 20px;
+        }
+        .Color {
+            background-color: #00ff00;
+        }
+    </style>
+</head>
+ 
+<body>
+    <div class="testArea">
+        <div class="formArea">
+            <input type="text" value="" id="getValue" />
+            <button type="button" onclick="getColorIs()">submit</button>
+        </div>
+        <div class="mainArea">
+            <div class="box1" id="box1">1</div>
+ 
+            <div class="box1" id="box2">2</div>
+            <div class="box1" id="box3">3</div>
+        </div>
+        <div class="mainArea">
+            <div class="box1" id="box4">4</div>
+            <div class="box1" id="box5">5</div>
+            <div class="box1" id="box6">6</div>
+        </div>
+        <div class="mainArea">
+            <div class="box1" id="box7">7</div>
+            <div class="box1" id="box8">8</div>
+            <div class=" box1" id="box9">9</div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+	function getColorIs() {
+            var getId = document.getElementById('getValue').value;
+			$(".box1").removeClass('Color');
+            $("#box" + getId).addClass('Color')
+        }
+</script>
+</body>
+ 
+</html>
