@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Series</title>
+</head>
+<body>
+    <input type="text" placeholder="Please enter Number" id="num">
+    <button onclick="Palin()">Check</button>
+
+    <script>
+        Palin = () =>{
+           let demo = document.getElementById("num").value;
+           if(demo === demo.split("").reverse().join("")){
+               alert("Given number is Palindrome")
+           }
+           else{
+               alert("Given number is not Palindrome")
+           }
+        }
+    </script>
+</body>
+
+</html>
